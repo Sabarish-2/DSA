@@ -2,23 +2,11 @@ package LinkedList;
 
 import java.util.EmptyStackException;
 
-/**
- * Node 
- */
-class Node {
 
-    public int data;
-    public Node next = null;
-    
-    public Node(int data) {
-        this.data = data;
-    }
-
-}
 
 public class MyLinkedList {
 
-    private Node head;
+    public Node head;
     private Node tail;
     
     public MyLinkedList() {

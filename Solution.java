@@ -1,25 +1,127 @@
-class Solution {
-    public static void rotate(int[] nums, int k) {
-        int i, n = nums.length,  swap = 0;
-        for (i = 0; i < n / 2 + 1; i++)
-        {
-            swap = nums[(i + k + 1) % n];
-            nums[(i + k + 1) % n] = nums[i];
-            nums[i] = swap;
-        }
-        // arr[(i + k) % n] = nums[i];
-        // for(i = 0; i < n; i++)
-        // nums[i] = arr[i];
-    }
 
+import java.util.*;
+
+class solution {
+
+    // A program which prints numbers with a space in permutaion from 1 to 10000.
+    // It should print like 1 2 3 ... 51 52 53 ... 10000
     public static void main(String[] args) {
-
-        int[] nums1 = { 1,2,3,4,5,6,7 };
-
-        int[] nums2 = { 5, 25, 4, 39, 57, 49, 93, 79, 7, 8, 49, 89, 2, 7, 73, 88, 45, 15, 34, 92, 84, 38, 85, 34, 16, 6,
-                99, 0, 2, 36, 68, 52, 73, 50, 77, 44, 61, 48 };
-
-        rotate(nums1, 3);
-        System.out.println(nums1);
+        // Write your code here
+        for (int i = 1; i <= 100; i++)
+        {
+            System.out.print("1 " + i + " ");
+        }
     }
-}
+
+    
+}    
+
+//     public static String addBinary(String a, String b) {
+//         int len1 = a.length(), len2 = b.length(), len = (len1 > len2)? len1 : len2;
+//         char[] ans = new char[len], as = a.toCharArray(), bs = b.toCharArray();
+//         boolean flag = false;
+//         while ((len1 > 0) && len2 > 0)
+//         {
+//             len1--;
+//             len2--;
+//             len--;
+//             if (as[len1] == '1' && (bs[len2] == '1') )
+//             {
+//                 if (flag)
+//                 {
+//                     ans[len] = '1';
+//                 }
+//                 else
+//                 {
+//                     ans[len] = '0';
+//                     flag = true;
+//                 }
+//             }
+//             else if (as[len1] == '1' || (bs[len2] == '1'))
+//             {
+
+//                 if (flag)
+//                 {
+//                     ans[len] = '0';
+
+//                 }
+//                 else
+//                 {
+//                     ans[len] = '1';
+//                 }
+//             }
+//             else
+//             {
+//                 if (flag)
+//                 {
+//                     flag = false;
+//                     ans[len] = '1';
+//                 }
+//                 else
+//                 {
+//                     ans[len] = '0';
+//                 }
+//             }
+//         }
+//         while(len1 > 0)
+//         {
+//             len1--;
+//             len--;
+//             if (flag && as[len1] == '1')
+//                 ans[len] = '0';
+//             else if (flag)
+//             {
+//                 ans[len] = '1';
+//                 flag = false;
+//             }
+//             else
+//                 ans[len] = '0';
+//         }
+
+//         while(len2 > 0)
+
+//         {
+
+//             len2--;
+
+//             len--;
+
+//             if (flag && bs[len2] == '1')
+
+//                 ans[len] = '0';
+
+//             else if (flag)
+
+//             {
+
+//                 ans[len] = '1';
+
+//                 flag = false;
+
+//             }
+
+//             else
+
+//                 ans[len] = '0';
+
+//         }
+//         String s = "";
+//         if (flag)
+//         {
+//             s += "1";
+//         }
+//         for (char ch: ans)
+//         {
+//             s += ch;
+//         }
+//         // System.out.println(ans.toString());
+//         // System.out.println(s);
+//         return (s);
+// }
+//     public static void main(String[] args) {
+        
+//         String a = "100", b = "11011";
+//         System.out.println(addBinary(a, b));
+//         // System.out.println();
+//     }
+// }

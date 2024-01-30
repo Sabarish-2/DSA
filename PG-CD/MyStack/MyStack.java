@@ -68,6 +68,73 @@ public class MyStack {
         return false;
     }
 
+    public void reverse(MyStack stack)
+    {
+        if (stack.isEmpty()) return;
+        
+        int num = stack.pop();
+        reverse(stack);
+        addToStack(stack, num);
+        return;
+    }
+
+    void addToStack(MyStack stack, int num)
+    {
+        if (stack.isEmpty()) {
+            stack.push(num);
+            return;
+        }
+        int val = stack.pop();
+        addToStack(stack, num);
+        stack.push(val);
+        return;
+    }
+
+    public void sort()
+    {
+        if (isEmpty()) return;
+
+        int num = pop();
+        sort();
+        addSorted(num);
+        return;
+    }
+
+    void addSorted(int num)
+    {
+        if (isEmpty())
+        {
+            push(num);
+            return;
+        }
+
+        int val = peek();
+        if (num >= val)
+        {
+            push(num);
+        }
+        else
+        {
+            pop();
+            addSorted(num);
+            push(val);
+        }
+    }
+
+    public void addAtLast(MyStack stack, int num)
+    {
+        if (stack.isEmpty())
+        {
+            stack.push(num);
+            return;
+        } 
+
+        int val = stack.pop();
+        addAtLast(stack, num);
+        stack.push(val);
+        return;
+    }
+
     public String toString()
     {
         StringBuilder sb = new StringBuilder();

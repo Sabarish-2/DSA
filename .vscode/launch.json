@@ -3,6 +3,41 @@
   "configurations": [
     {
       "type": "java",
+      "name": "solution",
+      "request": "launch",
+      "mainClass": "solution",
+      "projectName": "DSAc_ef7856bb"
+    },
+    {
+      "type": "java",
+      "name": "Basics",
+      "request": "launch",
+      "mainClass": "HashMap.Basics",
+      "projectName": "DSAc_ef7856bb"
+    },
+    {
+      "type": "java",
+      "name": "ListNode",
+      "request": "launch",
+      "mainClass": "ListNode",
+      "projectName": "DSAc_ef7856bb"
+    },
+    {
+      "type": "java",
+      "name": "Solution",
+      "request": "launch",
+      "mainClass": "Solution",
+      "projectName": "DSAc_ef7856bb"
+    },
+    {
+      "type": "java",
+      "name": "Solution",
+      "request": "launch",
+      "mainClass": "LinkedList.Solution",
+      "projectName": "DSAc_ef7856bb"
+    },
+    {
+      "type": "java",
       "name": "Main",
       "request": "launch",
       "mainClass": "MyStack.Main",
