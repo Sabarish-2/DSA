@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "main",
+      "request": "launch",
+      "mainClass": "queue.main",
+      "projectName": "DSAc_ef7856bb"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "queue.Main",
+      "projectName": "DSAc_ef7856bb"
+    },
+    {
+      "type": "java",
       "name": "solution",
       "request": "launch",
       "mainClass": "solution",
