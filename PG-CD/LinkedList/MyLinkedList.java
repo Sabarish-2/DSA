@@ -2,16 +2,7 @@ package LinkedList;
 
 import java.util.EmptyStackException;
 
-class Node {
 
-    public int data;
-    public Node next = null;
-    
-    public Node(int data) {
-        this.data = data;
-    }    
-    
-}    
 
 public class MyLinkedList {
 
@@ -20,46 +11,14 @@ public class MyLinkedList {
     
     public MyLinkedList() {
         head = tail = null;
-    }    
-    
-    public void insert(int data) {
-        // Create a new node and set the data value
-        Node node = new Node(data);
-        if (isEmpty()) {
-            // if there is no node in the list, make the new node the head
-            head = tail = node;
-        } else {
-            // otherwise, add the new node to the end of the linked list
-            tail.next = node;
-            tail = node;
-        }
     }
-    
-    public void deleteAt (int index)
-    {
-        if (index < 0) throw new IllegalArgumentException("Index cannot be Negative");
-        if (isEmpty()) throw new EmptyStackException();
-        if(index == 0) 
-        {
-            deleteStart();
-            return;
-        }
-        Node node = head;
-        while(index > 1)
-        {
-            node = node.next;
-            if (node.next == null) throw new IndexOutOfBoundsException();
-            index--;
-        }
-        node.next = node.next.next;
-    }
-    
+
     public Node reverseRec(Node head)
     {
         if (head == null || head.next == null) {
             this.head = head;
             return head;
-        }    
+        }
 
 
         Node rest = reverseRec(head.next);
@@ -68,27 +27,27 @@ public class MyLinkedList {
         head.next = null;
         
         return rest;
-    }    
+    }
     public void reverseRec()
     {
         reverseRec(head);
         findTail();
-    }    
+    }
 
     public void showHeadTail()
     {
         System.out.println("Head: "+ head.data);
         System.out.println("Tail: "+ tail.data);
-    }    
+    }
 
     public void findTail()
     {
         Node node = head;
         while (node.next != null) {
             node = node.next;
-        }    
+        }
         tail = node;
-    }    
+    }
 
     public void deleteNFromEnd(int n)
     {
@@ -99,15 +58,15 @@ public class MyLinkedList {
         {
             curr = curr.next;
             n--;
-        }    
+        }
         if(curr == null) head = head.next;
         while (curr.next != null)
         {
             curr = curr.next;
             nthNode = nthNode.next;
-        }    
+        }
         nthNode.next = nthNode.next.next;
-    }    
+    }
 
     public void reverse()
     {
@@ -121,11 +80,11 @@ public class MyLinkedList {
             prev = curr;
             curr = next;
             next = curr.next;
-        }    
+        }
         head = curr;
         curr.next = prev;
 
-    }    
+    }
 
     public int sum() {
         if (isEmpty()) return 0;
@@ -135,19 +94,19 @@ public class MyLinkedList {
         while (node != null) {
             sum += node.data;
             node = node.next;
-        }    
+        }
         return sum;
-    }    
+    }
 
     public void clear()
     {
         head = tail = null;
-    }    
+    }
 
     public boolean isEmpty()
     {
         return (head == null && tail == null);
-    }    
+    }
 
     public int indexof(int value)
     {
@@ -158,10 +117,23 @@ public class MyLinkedList {
             if (value == node.data) return index;
             index++;
             node = node.next;
-        }    
+        }
 
         return -1;
-    }    
+    }
+
+    public void insert(int data) {
+        // create a new node and set the data value
+        Node node = new Node(data);
+        if (isEmpty()) {
+            // if there is no node in the list, make the new node the head
+            head = tail = node;
+        } else {
+            // otherwise, add the new node to the end of the linked list
+            tail.next = node;
+            tail = node;
+        }
+    }
 
     public void insert(int data, int index) {
         if (isEmpty()) {
@@ -211,6 +183,24 @@ public class MyLinkedList {
         return size;
     }
 
+    public void deleteAt (int index)
+    {
+        if (index < 0) throw new IllegalArgumentException("Index cannot be Negative");
+        if (isEmpty()) throw new EmptyStackException();
+        if(index == 0) 
+        {
+            deleteStart();
+            return;
+        }
+        Node node = head;
+        while(index > 1)
+        {
+            node = node.next;
+            if (node.next == null) throw new IndexOutOfBoundsException();
+            index--;
+        }
+        node.next = node.next.next;
+    }
 
     public void deleteStart()
     {
