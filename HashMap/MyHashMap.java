@@ -1,5 +1,7 @@
 package HashMap;
 
+import java.util.LinkedList;
+
 class Node {
     int key;
     String value;
@@ -21,7 +23,7 @@ public class MyHashMap {
 
     MyHashMap (int n) {
         size = n;
-        list = new LinkedList<>()[size];
+        list = new LinkedList<>();
     }
 
     int hashKey(int key) {

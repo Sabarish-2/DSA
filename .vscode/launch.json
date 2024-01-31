@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "HashMap.Main",
+      "projectName": "DSA_aff12070"
+    },
+    {
+      "type": "java",
       "name": "main",
       "request": "launch",
       "mainClass": "queue.main",
